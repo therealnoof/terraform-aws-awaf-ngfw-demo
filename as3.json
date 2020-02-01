@@ -15,12 +15,12 @@
             "10.0.3.150"
           ],
           "snat": "auto",
-          "pool": "web-server",
+          "pool": "Web",
           "policyWAF": {
-            "use": "My_ASM_Policy"
+            "use": "Demo_ASM_Policy"
           }
         },
-        "web-server": {
+        "Web": {
           "class": "Pool",
           "monitors": [
             "http"
@@ -31,12 +31,12 @@
               "serverAddresses": [
                 "10.0.4.50"
               ]
-            },
+            }
         ]
         },
-        "My_ASM_Policy": {
+        "Demo_ASM_Policy": {
           "class": "WAF_Policy",
-          "url": "https://github.com/therealnoof/terraform-aws-awaf-ngfw-demo/blob/master/waftemplate.xml",
+          "url": "https://raw.githubusercontent.com/therealnoof/terraform-aws-awaf-ngfw-demo/master/waftemplate.xml",
           "ignoreChanges": true
         }
       }
