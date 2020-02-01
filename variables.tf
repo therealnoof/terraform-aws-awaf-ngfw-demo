@@ -13,7 +13,7 @@ variable "ec2_key_name" {
 variable "region" {
   description = "Set the Region"
   type        = string
-  default     = "us-gov-west-1"
+  default     = "us-east-1"
 }
 
 #
@@ -22,7 +22,7 @@ variable "region" {
 variable "az" {
   description = "Set Availability Zone"
   type        = string
-  default     = "us-gov-west-1a"
+  default     = "us-east-1a"
 }
 
 #
@@ -41,4 +41,13 @@ variable "paloalto_ami" {
   description = "Palo Alto NGFW PAYG Bundle 2"
   type        = string
   default     = "ami-016bb6fab3b0571f9"
+}
+
+#
+# Juice Shop AMI - hard coded
+#
+variable "juiceshop_ami" {
+  description = "Custom Public AMI running Ubuntu with Docker"
+  type        = string
+  default     = "ami-0e3bf8071436d410c"
 }
