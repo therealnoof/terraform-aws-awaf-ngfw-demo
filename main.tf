@@ -467,6 +467,17 @@ resource "aws_instance" "bigip" {
   instance_type               = "m5.xlarge"
   key_name                    = var.ec2_key_name  
   availability_zone           = "${var.az}"
+  # build user_data file from template
+  user_data = templatefile(
+    "${path.module}/f5_onboard.tmpl",
+    {
+      DO_URL      = var.DO_URL,
+      AS3_URL     = var.AS3_URL,
+      libs_dir    = var.libs_dir,
+      onboard_log = var.onboard_log,
+      PWD         = var.password_bigip
+    }
+  )
   tags = {
     Name = "awaf-ngfw-demo-bigip"
   }
@@ -483,7 +494,6 @@ resource "aws_instance" "bigip" {
     device_index              = 2
   }
 }
-
 
 #############
 # Variables #

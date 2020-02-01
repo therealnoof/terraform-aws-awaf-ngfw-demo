@@ -17,7 +17,7 @@ output "eip_for_BIGIP" {
 }
 
 # Web Server MGMT IP
-output "eip_for_Web_Server" {
-  description = "EIP or Public address for the Web Server"
-  value       = aws_eip_association.web.public_ip
-}
+#output "eip_for_Web_Server" {
+#  description = "EIP or Public address for the Web Server"
+#  value       = aws_eip_association.web.public_ip
+#}

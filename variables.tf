@@ -51,3 +51,37 @@ variable "juiceshop_ami" {
   type        = string
   default     = "ami-0e3bf8071436d410c"
 }
+
+## Please check and update the latest DO URL from https://github.com/F5Networks/f5-declarative-onboarding/releases
+# always point to a specific version in order to avoid inadvertent configuration inconsistency
+variable DO_URL {
+  description = "URL to download the BIG-IP Declarative Onboarding module"
+  type        = string
+  default     = "https://github.com/F5Networks/f5-declarative-onboarding/releases/download/v1.7.0/f5-declarative-onboarding-1.7.0-3.noarch.rpm"
+}
+## Please check and update the latest AS3 URL from https://github.com/F5Networks/f5-appsvcs-extension/releases/latest 
+# always point to a specific version in order to avoid inadvertent configuration inconsistency
+variable AS3_URL {
+  description = "URL to download the BIG-IP Application Service Extension 3 (AS3) module"
+  type        = string
+  default     = "https://github.com/F5Networks/f5-appsvcs-extension/releases/download/v3.14.0/f5-appsvcs-3.14.0-4.noarch.rpm"
+}
+
+variable "libs_dir" {
+  description = "Directory on the BIG-IP to download the A&O Toolchain into"
+  type        = string
+  default     = "/config/cloud/aws/node_modules"
+}
+
+variable onboard_log {
+  description = "Directory on the BIG-IP to store the cloud-init logs"
+  type        = string
+  default     = "/var/log/startup-script.log"
+}
+
+variable "password_bigip" {
+  description = "Static password assigned to BIG-IP on boot"
+  type        = string
+  default     = "F5Twister!"
+  
+}

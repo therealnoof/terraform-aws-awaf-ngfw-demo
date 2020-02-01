@@ -1,0 +1,44 @@
+{
+    "class": "ADC",
+    "schemaVersion": "3.2.0",
+    "id": "5489432",
+    "label": "ASM_policy_external_URL",
+    "remark": "ASM_policy_external_URL",
+    "Sample_app_sec_02": {
+      "class": "Tenant",
+      "HTTP_Service": {
+        "class": "Application",
+        "template": "http",
+        "serviceMain": {
+          "class": "Service_HTTP",
+          "virtualAddresses": [
+            "10.0.3.150"
+          ],
+          "snat": "auto",
+          "pool": "web-server",
+          "policyWAF": {
+            "use": "My_ASM_Policy"
+          }
+        },
+        "web-server": {
+          "class": "Pool",
+          "monitors": [
+            "http"
+          ],
+          "members": [
+            {
+              "servicePort": 80,
+              "serverAddresses": [
+                "10.0.4.50"
+              ]
+            },
+        ]
+        },
+        "My_ASM_Policy": {
+          "class": "WAF_Policy",
+          "url": "https://github.com/therealnoof/terraform-aws-awaf-ngfw-demo/blob/master/waftemplate.xml",
+          "ignoreChanges": true
+        }
+      }
+    }
+  }
