@@ -4,7 +4,7 @@
     "id": "5489432",
     "label": "ASM_policy_external_URL",
     "remark": "ASM_policy_external_URL",
-    "Sample_app_sec_02": {
+    "awaf_ngfw_demo": {
       "class": "Tenant",
       "HTTP_Service": {
         "class": "Application",

@@ -107,8 +107,8 @@ DATA="{\"operation\":\"INSTALL\",\"packageFilePath\":\"/var/config/rest/download
 echo -e "\n"$(date) "Install AS3 Pkg"
 restcurl -X POST "shared/iapp/package-management-tasks" -d $DATA
 
-### Sleeping for 2 minutes to make sure DO Pkg has been installed
-sleep 2m
+### Sleeping for 3 minutes to make sure DO Pkg has been installed
+sleep 3m
 
 # Install DO Configuration
 echo -e "\n"$(date) "Installing DO Configuration File"
@@ -143,7 +143,7 @@ restcurl -u admin:F5Twister! -X POST https://localhost/mgmt/shared/declarative-o
                 "1.pool.ntp.org",
                 "2.pool.ntp.org"
             ],
-            "timezone": "PST"
+            "timezone": "UTC"
         },    
         "myProvisioning": {
             "class": "Provision",
@@ -192,8 +192,8 @@ restcurl -u admin:F5Twister! -X POST https://localhost/mgmt/shared/declarative-o
     }
 }'
 
-### Sleeping for 3 minutes so ASM can provision, then we run the AS3 declaration.
-sleep 3m 
+### Sleeping for 4 minutes so ASM can provision, then we run the AS3 declaration.
+sleep 4m 
 
 # Install AS3 Configuration
 echo -e "\n"$(date) "Installing AS3 Configuration File"
@@ -203,7 +203,7 @@ restcurl -u admin:F5Twister! -X POST https://localhost/mgmt/shared/appsvcs/decla
     "id": "5489432",
     "label": "ASM_policy_external_URL",
     "remark": "ASM_policy_external_URL",
-    "Sample_app_sec_02": {
+    "awaf_ngfw_demo": {
       "class": "Tenant",
       "HTTP_Service": {
         "class": "Application",
