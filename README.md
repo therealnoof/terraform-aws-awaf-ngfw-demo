@@ -38,7 +38,8 @@ provider "aws" {
   region = "${var.region}"
   shared_credentials_file = "/home/ahernandez/Terraform/.aws/credentials-commercial-aws"
 }
-5. You may need a key pair (I recommended you create one and reference it during terraform apply)
+
+6. You may need a key pair (I recommended you create one and reference it during terraform apply)
 https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html
 
 
