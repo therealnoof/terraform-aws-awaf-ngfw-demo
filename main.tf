@@ -433,7 +433,7 @@ resource "aws_instance" "ngfw" {
 
   count                       = 1
   ami                         = "${var.paloalto_ami}"  
-  instance_type               = "m5.xlarge"
+  instance_type               = "m5.2xlarge"
   iam_instance_profile        = "${aws_iam_instance_profile.profile.name}"
   key_name                    = var.ec2_key_name  
   user_data                   = <<-EOF
@@ -464,7 +464,7 @@ resource "aws_instance" "bigip" {
 
   count                       = 1
   ami                         = "${var.awaf_ami}"  
-  instance_type               = "m5.xlarge"
+  instance_type               = "m5.2xlarge"
   key_name                    = var.ec2_key_name  
   availability_zone           = "${var.az}"
   # build user_data file from template
