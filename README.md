@@ -14,7 +14,7 @@ The Terraform will launch a fully bootstrapped NGFW(Palo Alto), BIG-IP(AWAF), an
 
 Three public IP's will be assigned and outputted to the terminal after launch.  You will need to wait about 10 to 15 minutes for the infrastructure to fully boot up.  After boot up completes, open a web browser pointing to the eip_for_Web_Application IP.  
 
-The BIG-IP has a very generic WAF policy applied to the virtual but it is in blocking mode. Feel free to fork this repo and create your own policy. Just export the policy and replace the xml in the repo but keep the same file name.
+The BIG-IP has a very generic WAF policy applied to the virtual but it is in blocking mode. Feel free to fork this repo and create your own policy. You will need to change the Github URL in as3 declaration inside of the f5_onboard.tmpl file.
 
 Use your favorite web attack tools or download Kali Linux, Burp Suite or OWASP Zap for example.
 # IMPORTANT DoS or DDoS attack types are not allowed against AWS infrastructure
