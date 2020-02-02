@@ -73,12 +73,6 @@
             "vlan": "external",
             "allowService": "default",
             "trafficGroup": "traffic-group-local-only"
-        },
-        "default": {
-            "class": "Route",
-            "gw": "10.0.3.50",
-            "network": "default",
-            "mtu": 1500
         }
         
     }
