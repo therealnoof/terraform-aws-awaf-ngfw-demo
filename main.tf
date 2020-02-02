@@ -3,7 +3,7 @@
 #
 provider "aws" {
   region = "${var.region}"
-  shared_credentials_file = "~/.aws/credentials-commercial-aws"
+  shared_credentials_file = "/home/ahernandez/Terraform/.aws/credentials-commercial-aws"
 }
 
 #
