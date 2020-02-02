@@ -10,7 +10,7 @@ This Terraform will deploy a fully bootstrapped infrastructure for the purposes 
 
 Some enterprises believe that a NGFW will protect their apps from layer 7 attack types.  This is simply not true.  While a NGFW does have some layer 7 functionality...it does not protect apps from the OWASP top 10.  Simply stated a NGFW is NOT a Web Application Firewall!  This demo will help demostrate.
 
-The Terraform will launch a fully bootstrapped NGFW(Palo Alto), BIG-IP(AWAF), and a vulnerable web server hosting the Juice Shop application.
+The Terraform will launch fully bootstrapped PAYGO instances of a NGFW(Palo Alto), BIG-IP(AWAF), and a vulnerable web server hosting the Juice Shop application.
 
 Three public IP's will be assigned and outputted to the terminal after launch.  You will need to wait about 10 to 15 minutes for the infrastructure to fully boot up.  After boot up completes, open a web browser pointing to the eip_for_Web_Application IP.  
 
