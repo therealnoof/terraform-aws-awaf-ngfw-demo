@@ -215,6 +215,11 @@ restcurl -u admin:F5Twister! -X POST https://localhost/mgmt/shared/appsvcs/decla
           ],
           "snat": "auto",
           "pool": "Web",
+          "securityLogProfiles": [
+                    {
+                       "bigip": "/Common/Log all requests"
+                    }
+                    ],
           "policyWAF": {
             "use": "Demo_ASM_Policy"
           }
