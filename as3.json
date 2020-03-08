@@ -16,6 +16,11 @@
           ],
           "snat": "auto",
           "pool": "Web",
+          "securityLogProfiles": [
+                    {
+                       "bigip": "/Common/Log all requests"
+                    }
+                    ],
           "policyWAF": {
             "use": "Demo_ASM_Policy"
           }
